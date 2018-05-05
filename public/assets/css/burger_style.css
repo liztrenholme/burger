@@ -1,0 +1,22 @@
+body {
+	background-image: url("../img/btscreen.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: black;
+	background-attachment: fixed;
+}
+
+.fancy {
+	color: #e7625b;
+}
+
+#characters {
+	border: 5px #8580f6 solid;
+	opacity: .9;
+}
+
+.make-burger {
+	background-color: #fff;
+	opacity: .9;
+	margin: 3%;
+}

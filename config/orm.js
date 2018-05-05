@@ -1,7 +1,7 @@
 var connection = require("./connection.js")
 
 var orm = { // selecting all 
-    selectAll: function(callback) {
+    selectAll: function(input, callback) {
         connection.query('SELECT * FROM burgers', function(err, result) {
             if (err) {
                 return res.status(500).end();
@@ -12,10 +12,10 @@ var orm = { // selecting all
     },
     //adding a new burger
     insertOne: function(burger, callback) {
-        connection.query('INSERT INTO burgers SET ?', {
-            burger: burger,
-            devoured: false,
-        }, function(err, result) {
+        connection.query('INSERT INTO burgers (burger) VALUES ("'+newBurger+'")',
+            // burger: burger,
+            // devoured: false,
+        function(err, result) {
             if (err) {
                 return res.status(500).end();
             }
