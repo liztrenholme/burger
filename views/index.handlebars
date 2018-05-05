@@ -1,8 +1,8 @@
 <div class="row">
   <center>
     <div class="col-md-6">
-      <h4 class="red_font">Ready to eat!</h4>
-      <div id="ready_to_eat">
+      <h4 class="fancy">Ready to eat!</h4>
+      <div id="notEaten">
         {{#each burgers}}
           {{#unless devoured}}
           <form action="burger/eat/{{id}}" method="POST">
@@ -18,15 +18,12 @@
       </div>
     </div>
     <div class="col-md-6">
-      <h4 class="red_font">Already eaten!</h4>
-      <div id="already_eaten">
+      <h4 class="fancy">Already devoured!</h4>
+      <div id="eaten">
         {{#each burgers}}
           {{#if this.devoured}}
             <div class="input-group">
               <li class="form-control">{{this.id}}. {{this.burger}}</li>
-              <span class="input-group-btn">
-                <button class="btn btn-info whine-button" type="button">Whine!</button>
-              </span>
             </div>
           {{/if}}
         {{/each}}
