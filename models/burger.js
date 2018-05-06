@@ -10,13 +10,13 @@ var burger = {
   },
 
   insertOne: function(burger, callback){
-    orm.insertOne("burgers", function(res){
+    orm.insertOne("burgers", vals, function(res){
       callback(res);
     });
   },
 
-  updateOne: function(id, callback){
-    orm.updateOne(id, function(res){
+  updateOne: function(columnVals, condition, callback){
+    orm.updateOne("burgers", columnVals, condition, function(res){
       callback(res);
     });
   }

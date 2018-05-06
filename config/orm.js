@@ -11,7 +11,7 @@ var orm = { // selecting all
 
     },
     //adding a new burger
-    insertOne: function(burger, callback) {
+    insertOne: function(table, vals, callback) {
         connection.query('INSERT INTO burgers (burger) VALUES ("'+newBurger+'")',
             // burger: burger,
             // devoured: false,
@@ -24,8 +24,8 @@ var orm = { // selecting all
 
     },
     //modifying existing burger
-    updateOne: function(burgerID, callback) {
-        connection.query('UPDATE burgers SET ? WHERE ?', [{ devoured: true }, { id: burgerID }], function(err, result) {
+    updateOne: function(table, burger, condition, callback) {
+        connection.query('UPDATE burgers SET ? WHERE ?', [condition], function(err, result) {
             if (err) {
                 return res.status(500).end();
             }

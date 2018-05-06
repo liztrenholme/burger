@@ -4,14 +4,12 @@
   {{#each burgers}}
     {{#unless devoured}}
       {{> burger-block devoured=false}}
-      <div> 
-                    
-                    <form action="/burger/eat/{{id}}" method="POST">
-                        <div>{{burger}}
-                        <button class="devour" data-id="{{id}}">Devour!</button>
-                        </div>
-                    </form>
-                    </div>
+      <div
+        <form action="/burger/eat/{{id}}" method="PUT">
+          <div>{{burger}}
+          </div>
+        </form>
+      </div>
     {{/unless}}
   {{/each}}
 </ul>
